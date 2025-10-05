@@ -1,0 +1,30 @@
+:root {
+    --white: #FFFFF6;
+    --text-brown: #702B15;
+    --text-dark: #131212;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    color: var(--text-dark);
+    background-color: var(--white);
+    line-height: 1.6;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6, .logo, .logo-footer {
+    font-family: "Abril Fatface", serif;
+}
+
+/* Responsive */
+
+/* Tablet */
+@media (min-width: 768px) {}
+
+/* Desktop */
+@media (min-width: 1280px) {}
