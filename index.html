@@ -5,54 +5,98 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="My personal portfolio showcasing projects">
     <title>My Portfolio</title>
-
-    <script src="js/main.js" type="module" defer></script>
     <link rel="stylesheet" href="css/styles.css">
+    <script src="js/main.js" type="module" defer></script>
 </head>
 <body>
-    <header></header>
+    <header class="site-header">
+        <div class="brand">
+            <a href="#home" class="logo">Anniken<br>Thorbjørnsen<br>Lysø</a>
+        </div>
+
+        <nav class="main-nav" aria-label="main navigation">
+            <ul>
+                <li><a href="#contact"></a>Contact</li>
+                <li><a href="#resume"></a>Resume</li>
+                <li><a href="#projects"></a>Projects</li>
+            </ul>
+        </nav>
+    </header>
+
     <main>
-        <h1>Portfolio</h1>
-        <section id="projects">
+        <section class="intro" id="home">
+            <div class="intro-text">
+                <h1>Hi, I'm Anniken</h1>
+                <p>I am currently studying front-end development</p>
+
+                <div class="links" id="resume">
+                    <a href="assets/placeholder_resume.pdf" target="_blank" class="link-btn">View resume</a>
+                    <a href="assets/placeholder_resume.pdf" download>Download</a>
+                    <a href="assets/placeholder_resume.pdf" target="_blank" class="link-btn">View Cover Letter</a>
+                    <a href="assets/placeholder_resume.pdf" download>Download</a>
+                </div>
+
+                <div class="intro-image">
+                    <img src="assets/placeholder_photo.jpg" alt="Portrait of Anniken Thorbjørnsen Lysø">
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects">
             <h2>Projects</h2>
-            <div class="project-cards">
+            <div class="project-grid">
 
                 <!-- Project 1 -->
                 <article class="project-card">
-                    <img src="assets/placeholder_photo.jpg" alt="project thumbnail">
-                    <h3>Project title</h3>
-                    <p>Description</p>
-                    <div class="project-links">
-                        <a href="">GitHub</a>
-                        <a href="">Live Demo</a>
+                    <img src="assets/placeholder_photo.jpg" alt="GameHub project thumbnail">
+                    <div class="card-content">
+                        <h3>Project title</h3>
+                        <p>Description</p>
+                        <div class="card-links">
+                            <a href="" target="_blank">GitHub</a>
+                            <a href="" target="_blank">Live</a>
+                        </div>
                     </div>
                 </article>
 
                 <!-- Project 2 -->
                 <article class="project-card">
-                    <img src="assets/placeholder_photo.jpg" alt="project thumbnail">
-                    <h3>Project title</h3>
-                    <p>Description</p>
-                    <div class="project-links">
-                        <a href="">GitHub</a>
-                        <a href="">Live Demo</a>
+                    <img src="assets/placeholder_photo.jpg" alt="GameHub project thumbnail">
+                    <div class="card-content">
+                        <h3>Project title</h3>
+                        <p>Description</p>
+                        <div class="card-links">
+                            <a href="" target="_blank">GitHub</a>
+                            <a href="" target="_blank">Live</a>
+                        </div>
                     </div>
                 </article>
 
                 <!-- Project 3 -->
                 <article class="project-card">
-                    <img src="assets/placeholder_photo.jpg" alt="projects thumbnail">
-                    <h3>Project title</h3>
-                    <p>Description</p>
-                    <div class="project-links">
-                        <a href="">GitHub</a>
-                        <a href="">Live Demo</a>
+                    <img src="assets/placeholder_photo.jpg" alt="GameHub project thumbnail">
+                    <div class="card-content">
+                        <h3>Project title</h3>
+                        <p>Description</p>
+                        <div class="card-links">
+                            <a href="" target="_blank">GitHub</a>
+                            <a href="" target="_blank">Live</a>
+                        </div>
                     </div>
                 </article>
-
             </div>
         </section>
     </main>
-    <footer></footer>
+
+    <footer class="site-footer" id="contact">
+        <div>
+            <h3>Contact</h3>
+            <p><a href="mailto:annlys01282@stud.noroff.no">annlys01282@stud.noroff.no</a></p>
+        </div>
+
+        <div class="footer-brand">
+            <span class="logo-footer">Anniken<br>Thorbjørnsen<br>Lysø</span>
+        </div>
+    </footer>
 </body>
 </html>
