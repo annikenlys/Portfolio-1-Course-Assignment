@@ -1,25 +1,95 @@
+/* Root Variables */
 :root {
-    --white: #FFFFF6;
-    --text-brown: #702B15;
-    --text-dark: #131212;
+    --background-color: #faf9f6;
+    --text-color: #1c1c1c;
+    --header-color: #181818;
+    --link-color: #3a3a3a;
+    --link-hover-color: #7a7a7a;
 }
 
+/* Global Resets & Base Styles */
 * {
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: "Poppins", sans-serif;
+    font-family: "Nunito Sans", sans-serif;
     margin: 0;
-    color: var(--text-dark);
-    background-color: var(--white);
-    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+/* Utility Resets*/
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+    color: inherit;
 }
 
 /* Typography */
-h1, h2, h3, h4, h5, h6, .logo, .logo-footer {
-    font-family: "Abril Fatface", serif;
+h1, h2, h3, h4, .logo {
+    font-weight: 400;
+    font-family: "Instrument Serif", serif;
+    color: var(--header-color);
 }
+
+h1 {
+    font-size: clamp(1.7rem, 2.5vw + 1rem, 2.28rem);
+}
+
+h2 {
+    font-size: clamp(1.5rem, 2vw + 0.8rem, 2.03rem);
+}
+
+h3 {
+    font-size: clamp(1.31rem, 1.8vw + 0.7rem, 1.802rem);
+}
+
+h4 {
+    font-size: clamp(1.19rem, 1.6vw + 0.6rem, 1.602rem);
+}
+
+/* Links & Interactions */
+.link {
+    color: var(--link-color);
+    font-family: "Instrument Serif", serif;
+}
+
+.link:hover {
+    color: var(--link-hover-color);
+}
+
+.link:focus-visible {
+    outline: 2px solid var(--link-hover-color);
+    outline-offset: 3px;
+}
+
+/* Logo */
+.logo {
+    font-size: clamp(1.375rem, 2vw + 1rem, 1.802rem);
+    letter-spacing: -0.03em;
+    line-height: 1.9rem;
+    color: var(--header-color);
+}
+
+/* Layout / Components */
+.nav-container{}
+
+.hero{}
+
+.projects {}
+
+.footer {}
 
 /* Responsive */
 
