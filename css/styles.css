@@ -7,7 +7,7 @@
     --link-hover-color: #7a7a7a;
 }
 
-/* Global Resets & Base Styles */
+/* Resets & Base Styles */
 * {
     box-sizing: border-box;
 }
@@ -19,11 +19,11 @@ html {
 body {
     font-family: "Nunito Sans", sans-serif;
     margin: 0;
+    padding: 1.5rem;
     color: var(--text-color);
     background-color: var(--background-color);
 }
 
-/* Utility Resets*/
 ul {
     list-style: none;
     margin: 0;
@@ -32,14 +32,14 @@ ul {
 
 a {
     text-decoration: none;
-    cursor: pointer;
     color: inherit;
+    cursor: pointer;
 }
 
 /* Typography */
 h1, h2, h3, h4, .logo {
-    font-weight: 400;
     font-family: "Instrument Serif", serif;
+    font-weight: 400;
     color: var(--header-color);
 }
 
@@ -59,10 +59,11 @@ h4 {
     font-size: clamp(1.19rem, 1.6vw + 0.6rem, 1.602rem);
 }
 
-/* Links & Interactions */
+/* Links */
 .link {
-    color: var(--link-color);
     font-family: "Instrument Serif", serif;
+    color: var(--link-color);
+    transition: color 0.2s ease-in-out;
 }
 
 .link:hover {
@@ -74,16 +75,132 @@ h4 {
     outline-offset: 3px;
 }
 
-/* Logo */
-.logo {
-    font-size: clamp(1.375rem, 2vw + 1rem, 1.802rem);
-    letter-spacing: -0.03em;
-    line-height: 1.9rem;
-    color: var(--header-color);
+/* Header */
+header {
+    position: relative;
+    z-index: 10;
 }
 
-/* Layout / Components */
-.nav-container{}
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+/* Logo */
+.logo {
+    font-size: clamp(1.125rem, 1rem + 1vw, 1.802rem);
+    line-height: 1.5;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Navigation */
+.nav-list {
+    display: none;
+}
+.nav-list ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1.2rem;
+}
+
+/* Hamburger */
+.toggle-menu-container {
+    position: relative;
+    overflow: visible;
+}
+
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 18px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+
+.line {
+    width: 100%;
+    height: 2px;
+    background-color: var(--header-color);
+    border-radius: 2px;
+    transition: transform 0.35s ease, opacity 0.25s ease;
+    transform-origin: center;
+}
+
+.hamburger.is-active .line1 {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.is-active .line2 {
+    opacity: 0;
+}
+
+.hamburger.is-active .line3 {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Mobile menu */
+.menu-items {
+    background-color: var(--background-color);
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 70%;
+    max-width: 300px;
+    padding: 5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+.menu-items ul li {
+    opacity: 0;
+    transform: translateX(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.menu-items.is-open ul li {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.menu-items.is-open ul li:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.menu-items.is-open ul li:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.menu-items.is-open ul li:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+.menu-items.is-open {
+    transform: translateX(0);
+}
+
+body.menu-open {
+    overflow: hidden;
+}
+
+.menu-items a {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
 
 .hero{}
 
@@ -94,7 +211,42 @@ h4 {
 /* Responsive */
 
 /* Tablet */
-@media (min-width: 768px) {}
+@media (min-width: 768px) {
+    body {
+        padding: 1.5rem 3rem;
+    }
+}
 
 /* Desktop */
-@media (min-width: 1280px) {}
+@media (min-width: 1280px) {
+    body {
+        padding: 1.5rem 7.5rem;
+    }
+
+    header {
+        background: var(--background-color);
+    }
+
+    .nav-container {
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .toggle-menu-container {
+        display: none;
+    }
+
+    .nav-list {
+        display: block;
+    }
+
+    .nav-list ul {
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 0.125rem;
+    }
+
+    .nav-list a.link {
+        font-size: 1.166rem;
+    }
+}
