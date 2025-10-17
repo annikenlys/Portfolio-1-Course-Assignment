@@ -269,10 +269,9 @@ body.menu-open {
 
 .project-card img {
     width: 100%;
-    height: auto;
+    height: 50%;
     aspect-ratio: 3 / 4;
-    object-fit: cover;
-    border-radius: 5rem;
+    object-fit: contain;
 }
 
 .card-content {
